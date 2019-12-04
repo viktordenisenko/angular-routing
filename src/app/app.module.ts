@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import {RouterModule} from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
+import {HttpClientModule} from '@angular/common/http';
+import { ProductComponent } from './components/product/product.component';
 
 const routes = [
   {
@@ -28,6 +30,11 @@ const routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'product/:productId',
+    component: ProductComponent
+
   }
 ];
 
@@ -39,9 +46,11 @@ const routes = [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(routes),
